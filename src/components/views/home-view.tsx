@@ -89,7 +89,7 @@ export function HomeView() {
             <HeroAnimation />
           </div>
 
-          <div className="relative z-10 max-w-4xl w-full">
+          <div className="relative z-10 max-w-7xl w-full">
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -101,7 +101,7 @@ export function HomeView() {
               </div>
               <div className="space-y-1">
                 <p className="text-[9px] md:text-sm font-code tracking-[0.2em] md:tracking-[0.4em] text-accent uppercase">{t('home.est_date')}</p>
-                <p className="w-full text-lg md:text-3xl font-bold text-foreground tracking-tight break-all">{t('home.platform_system')}</p>
+                <p className="text-lg md:text-3xl font-bold text-foreground tracking-tight">{t('home.platform_system')}</p>
               </div>
             </motion.div>
             

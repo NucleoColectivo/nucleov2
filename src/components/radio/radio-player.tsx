@@ -2,7 +2,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef, useMemo } from 'react';
-import { Play, Pause, Bot, Volume2, VolumeX, SkipBack, SkipForward, Shuffle, ChevronUp, ChevronDown, Maximize2, Activity, Settings2, X } from 'lucide-react';
+import { Play, Pause, Bot, Volume2, VolumeX, SkipBack, SkipForward, Shuffle, ChevronUp, ChevronDown, Maximize2, Activity, Settings2 } from 'lucide-react';
 import { WELCOME_DJ_URL, DJ_MESSAGES, DJ_INTERVAL_MINUTES, STATIONS_DATA } from '@/lib/data';
 import { cn } from '@/lib/utils';
 import { Slider } from '@/components/ui/slider';
@@ -18,7 +18,6 @@ interface RadioPlayerProps {
   onAnalyserReady: (analyser: AnalyserNode) => void;
   volume: number;
   isMuted: boolean;
-  onClose: () => void;
 }
 
 export function RadioPlayer({ 
@@ -29,8 +28,7 @@ export function RadioPlayer({
   setIsExpanded, 
   onAnalyserReady, 
   volume, 
-  isMuted,
-  onClose
+  isMuted 
 }: RadioPlayerProps) {
   const streamRef = useRef<HTMLAudioElement | null>(null);
   const djRef = useRef<HTMLAudioElement | null>(null);
@@ -262,15 +260,6 @@ export function RadioPlayer({
             <div className="p-1 text-neutral-500 hover:text-white transition-colors">
               {isExpanded ? <ChevronDown size={18} /> : <ChevronUp size={18} />}
             </div>
-            <button 
-              onClick={(e) => {
-                e.stopPropagation();
-                onClose();
-              }} 
-              className="p-1 ml-1 text-neutral-500 hover:text-white transition-colors"
-            >
-              <X size={18} />
-            </button>
           </div>
         </div>
 

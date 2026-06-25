@@ -37,13 +37,13 @@ export function HeroAnimatedText() {
       id: 2,
       content: <div dangerouslySetInnerHTML={{ __html: t('hero_animated_text.slide2') || '' }} />,
       duration: 6000,
-      className: "font-light !text-4xl sm:!text-5xl md:!text-7xl"
+      className: "font-light !text-4xl sm:!text-5xl md:!text-7xl lg:!text-8xl"
     },
     {
       id: 3,
       content: <div dangerouslySetInnerHTML={{ __html: t('hero_animated_text.slide3') || '' }} />,
       duration: 6000,
-      className: "font-light !text-4xl sm:!text-5xl md:!text-7xl"
+      className: "font-light !text-4xl sm:!text-5xl md:!text-7xl lg:!text-8xl"
     },
     {
       id: 4,
@@ -55,13 +55,13 @@ export function HeroAnimatedText() {
       id: 5,
       content: <div dangerouslySetInnerHTML={{ __html: t('hero_animated_text.slide5') || '' }} />,
       duration: 6000,
-      className: "font-light !text-4xl sm:!text-5xl md:!text-7xl"
+      className: "font-light !text-4xl sm:!text-5xl md:!text-7xl lg:!text-8xl"
     },
     {
       id: 6,
       content: <div dangerouslySetInnerHTML={{ __html: t('hero_animated_text.slide6') || '' }} />,
       duration: 6000,
-      className: "font-black !text-4xl sm:!text-5xl md:!text-7xl"
+      className: "font-black !text-4xl sm:!text-5xl md:!text-7xl lg:!text-8xl"
     },
     {
       id: 7,
@@ -73,7 +73,7 @@ export function HeroAnimatedText() {
       id: 8,
       content: <div dangerouslySetInnerHTML={{ __html: t('hero_animated_text.slide8') || '' }} />,
       duration: 6000,
-      className: "font-light !text-4xl sm:!text-5xl md:!text-7xl"
+      className: "font-light !text-4xl sm:!text-5xl md:!text-7xl lg:!text-8xl"
     },
     {
       id: 9,
@@ -98,16 +98,16 @@ export function HeroAnimatedText() {
   const currentSlide = slides[index];
 
   return (
-    <div className="relative flex items-center justify-start text-left min-h-[16rem] sm:min-h-[20rem] md:min-h-[24rem] lg:min-h-[28rem] w-full overflow-hidden">
+    <div className="relative flex items-center justify-start text-left min-h-[16rem] sm:min-h-[20rem] md:min-h-[24rem] lg:min-h-[28rem] w-full">
       <AnimatePresence mode="wait">
         <motion.div
           key={`${currentSlide.id}-${language}`}
-          initial={{ opacity: 0, x: 50, filter: "blur(10px)" }}
+          initial={{ opacity: 0, x: 20, filter: "blur(10px)" }}
           animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-          exit={{ opacity: 0, x: -50, filter: "blur(10px)" }}
+          exit={{ opacity: 0, x: -20, filter: "blur(10px)" }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className={cn(
-            "w-full text-[12vw] md:text-[9vw] lg:text-[7.5vw] tracking-tighter leading-none font-body break-all md:break-words",
+            "text-5xl sm:text-6xl md:text-8xl lg:text-9xl tracking-tighter leading-none font-body break-words max-w-full",
             currentSlide.className
           )}
         >

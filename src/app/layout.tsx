@@ -16,7 +16,6 @@ function GlobalLayout({ children }: { children: React.ReactNode }) {
   const { 
     isLoginOpen,
     currentStation,
-    setCurrentStation,
     isPlaying,
     setIsPlaying,
     isPlayerExpanded,
@@ -76,7 +75,6 @@ function GlobalLayout({ children }: { children: React.ReactNode }) {
           onAnalyserReady={setAudioAnalyser}
           volume={volume}
           isMuted={isMuted}
-          onClose={() => setCurrentStation(null)}
         />
       )}
     </motion.div>
