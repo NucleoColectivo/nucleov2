@@ -1,3 +1,5 @@
+'use client';
+
 import { useTranslation } from '@/context/language-context';
 import { SectionTitle } from '@/components/common/section-title';
 
